@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-function Project(props) {
-  console.log(props)
-  const id = props.match.params.id;
-  const [project, setProject] = useState()
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/projects/${id}`)
-      .then(res => {
-        setProject(res.data)
-      })
-      .catch(err => {
-        console.log(err.response)
-      });
-  }, [id]);
+function Project({ project }) {
 
   return (
     <>
       <h2>Name: {project.name}</h2>
+      <h3>Description: {project.description}</h3>
     </>
   )
 }

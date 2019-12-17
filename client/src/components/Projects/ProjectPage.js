@@ -15,7 +15,7 @@ function ProjectPage(props) {
       .catch(err => {
         console.log(err, 'Users could not be found.')
       })
-  })
+  }, [])
 
   return (
     <>
@@ -36,8 +36,8 @@ const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20%;
-  max-height: 200px;
+  width: 50%;
+  max-height: 300px;
   height: 100%;
   margin: 1%;
   padding: 1%;
